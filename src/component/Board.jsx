@@ -17,7 +17,7 @@ const Board = () => {
       const [x, y, z] = winnerArr[i];
 
       if (
-        inputs[x] === '' &&
+        inputs[x] !== '' &&
         inputs[x] === inputs[y] &&
         inputs[y] === inputs[z]
       ) {
@@ -26,6 +26,7 @@ const Board = () => {
     }
     return null;
   }
+
   const [inputs, setInputs] = useState(Array(9).fill(''));
   const [player, setPlayer] = useState(true);
   const winner = calculateWinner();
@@ -34,9 +35,9 @@ const Board = () => {
   let status = '';
 
   if (winner) {
-    status = 'Next Player  is' + ' ' + (player ? 'X' : '0');
-  } else {
     status = 'Winner is' + ' ' + (player ? '0' : 'X');
+  } else {
+    status = 'Next Player  is' + ' ' + (player ? 'X' : '0');
   }
 
   const handleInput = (e) => {
