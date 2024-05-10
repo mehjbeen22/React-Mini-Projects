@@ -58,6 +58,9 @@ const Board = () => {
 
   return (
     <div className=" flex justify-center items-center h-[100vh] flex-col">
+      <h1 className="m-3 text-4xl font-bold text-[#9d174d]">
+        TIC-TAC-TOE GAME
+      </h1>
       <div className="grid grid-cols-3 w-[300px] gap-2" onClick={handleInput}>
         {inputs.map((input, index) => {
           return (
@@ -71,7 +74,7 @@ const Board = () => {
           );
         })}
       </div>
-      <p className="text-3xl mt-5 shadow-md p-2 bg-[#f472b6] rounded-sm">
+      <p className="text-3xl mt-5 shadow-md p-2 bg-[#f472b6] rounded-md text-[#9d174d]">
         {status}
       </p>
     </div>
