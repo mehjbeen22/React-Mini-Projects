@@ -25,6 +25,7 @@ const Timer = () => {
   };
 
   const handleReset = () => {
+    clearInterval(intervalId.current);
     setHH(0);
     setMM(0);
     setSS(0);

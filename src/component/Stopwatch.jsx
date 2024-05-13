@@ -16,6 +16,7 @@ const Stopwatch = () => {
     clearInterval(intervalId.current);
   };
   const handelReset = () => {
+    clearInterval(intervalId.current);
     setPassedTime(0);
   };
 
