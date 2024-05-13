@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import Button from '@mui/material/Button';
 
 const Stopwatch = () => {
   const currentTime = useRef(0);
@@ -30,31 +31,50 @@ const Stopwatch = () => {
   };
 
   return (
-    <div className=" flex justify-center items-center h-[100vh] flex-col">
-      <div className=" flex justify-center items-center flex-col ">
-        <h1 className="text-3xl mb-4">Stopwatch</h1>
-        <div className="flex justify-center items-center bg-gray-200 h-16 w-48 mb-4">
+    <div className="bg-[#f1f5f9] flex justify-center items-center flex-col h-[90vh]">
+      <h1 className="text-3xl mb-4 font-bold">Stopwatch</h1>
+
+      <div className="border-2 p-5 bg-[#94a3b8] w-[35%] shadow-lg rounded-md">
+        <div className="bg-white flex items-center  border border-gray-200 p-6 justify-center gap-2 rounded-lg shadow-md">
           <div className="text-4xl">{formateTime()}</div>
         </div>
-        <div>
-          <button
+        <div className=" m-5 p-5  flex gap-5 justify-center items-center">
+          <Button
+            variant="contained"
             onClick={handleStart}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded"
+            sx={{
+              backgroundColor: '#22c55e',
+              '&:hover': {
+                // Using sx prop for styling in Material-UI
+                backgroundColor: 'black',
+                color: '#fff',
+                boxShadow:
+                  ' rgba(16, 17, 26, 0.1) 10px 10px 20px, rgba(16, 17, 26, 0.1) 0px 8px 24px, rgba(16, 17, 26, 0.1) 0px 16px 48px',
+              },
+            }}
           >
-            Start
-          </button>
-          <button
+            START
+          </Button>
+
+          <Button
+            variant="contained"
             onClick={handelStop}
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mr-2 rounded"
+            sx={{
+              backgroundColor: '#be123c',
+              '&:hover': {
+                // Using sx prop for styling in Material-UI
+                backgroundColor: 'black',
+                color: '#fff',
+                boxShadow:
+                  ' rgba(16, 17, 26, 0.1) 10px 10px 20px, rgba(16, 17, 26, 0.1) 0px 8px 24px, rgba(16, 17, 26, 0.1) 0px 16px 48px',
+              },
+            }}
           >
-            Stop
-          </button>
-          <button
-            onClick={handelReset}
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Reset
-          </button>
+            STOP
+          </Button>
+          <Button variant="contained" onClick={handelReset}>
+            RESET
+          </Button>
         </div>
       </div>
     </div>

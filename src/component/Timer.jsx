@@ -32,9 +32,7 @@ const Timer = () => {
 
   return (
     <div className="bg-[#e5e7eb] flex justify-center items-center flex-col h-[89.7vh]">
-      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
-        Timer
-      </h1>
+      <h1 className="text-3xl mb-4 font-bold">Timer</h1>
 
       <div>
         <div className="bg-white flex items-center  border border-gray-200 p-6 justify-center gap-2 rounded-lg shadow-md">
@@ -63,7 +61,7 @@ const Timer = () => {
         <div className=" m-5 p-5  flex gap-5">
           <Button
             variant="contained"
-            handlerFunction={handleStart}
+            onClick={handleStart}
             sx={{
               backgroundColor: '#22c55e',
               '&:hover': {
@@ -80,7 +78,7 @@ const Timer = () => {
 
           <Button
             variant="contained"
-            handlerFunction={handleStop}
+            onClick={handleStop}
             sx={{
               backgroundColor: '#be123c',
               '&:hover': {
@@ -96,7 +94,7 @@ const Timer = () => {
           </Button>
           <Button
             variant="contained"
-            handlerFunction={handleReset}
+            onClick={handleReset}
             sx={{
               '&:hover': {
                 // Using sx prop for styling in Material-UI

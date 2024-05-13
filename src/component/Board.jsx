@@ -42,7 +42,7 @@ const Board = () => {
 
   const handleInput = (e) => {
     // console.log(e.target.dataset.index);
-
+    if (winner) return;
     if (inputs[e.target.dataset.index] !== '') return;
 
     const copiedArr = inputs.map((input, index) => {
